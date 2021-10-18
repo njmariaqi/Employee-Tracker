@@ -8,12 +8,10 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 require('dotenv').config();
-const db = mysql.createConnection(
-     {
-          host: 'localhost',
-          user: 'root',
-          password: process.env.MYSQL_PASS,
-          database: 'employeeTracker_db'
-     },
-     console.log('conected')
-);
+const viewClass = require('./helper/viewData');
+const viewData = new viewClass('employeeTracker');
+const addDepartment = require('./helper/addDepartment')
+
+
+//addDepartment('newd');
+viewData.viewDepartments();
