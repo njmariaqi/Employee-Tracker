@@ -1,6 +1,4 @@
 const db = require('./db');
-const viewClass = require('./viewData');
-const viewData = new viewClass('employeeTracker');
 
 function addDepartment(departmentName) {
      db.query(`INSERT INTO departments (name)

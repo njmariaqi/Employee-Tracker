@@ -22,14 +22,16 @@ class ViewData {
      viewEmployees() {
           db.query(`
           SELECT
-          employees.id,
-          first_name,
-          last_name,
+          t1.id,
+          t1.first_name,
+          t1.last_name,
           title,
-          name AS department_name
-          FROM employees 
-          LEFT JOIN roles ON employees.role_id = roles.id
+          name AS department_name,
+          concat(t1.first_name, ' ',t1.last_name) AS manager_name
+          FROM employees t1
+          LEFT JOIN roles ON t1.role_id = roles.id
           LEFT JOIN departments ON roles.department_id = departments.id
+          INNER JOIN employees t2 ON t1.id = t2.manager_id
           `, 
           (err, res) => console.table(res));
      }
