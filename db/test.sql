@@ -1,3 +1,3 @@
-INSERT INTO roles (title, salary, department_id)
-VALUES
-('principal', 12000, 1);
+SELECT
+                              concat(t1.first_name, ' ', t1.last_name)
+                              FROM employees t1;
