@@ -51,5 +51,4 @@ function addRole() {
 })
 }
 
-addRole();
 module.exports = addRole;

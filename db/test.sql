@@ -1,3 +1,3 @@
-SELECT
-                              concat(t1.first_name, ' ', t1.last_name)
-                              FROM employees t1;
+UPDATE employees
+SET role_id = 1
+WHERE id = 1;
